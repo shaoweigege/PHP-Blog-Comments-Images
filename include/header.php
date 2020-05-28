@@ -32,7 +32,7 @@ if (isset($_COOKIE['userdata2'])) {
         color: #cc0000;
     }
     #container {
-        width: 800px;
+        width: 850px;
         margin: auto;
         border-left:  2px solid black;
         border-right: 2px solid black;
@@ -107,9 +107,10 @@ if (isset($_COOKIE['userdata2'])) {
 <a href="popular.php">Popular</a>
 <?php
 if (UNAME) {
-    if (ULEVEL > 0)
+    if (ULEVEL > 0) {
         echo '<a href="addpost.php">Add Post</a>';
-    echo '<a href="members.php">Members</a>';
+        echo '<a href="members.php">Members</a>';
+    }
     if (ULEVEL == 2)
         echo '<a href="userlevel.php">UserLevel</a>';
     echo '<a href="logout.php">Logout</a> ';
