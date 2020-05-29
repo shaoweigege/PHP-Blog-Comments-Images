@@ -4,8 +4,12 @@ class Pagin {
 
     public $totpages;
 
-    function setup($total, $perpage, $pageno)
+    function setup($total, $perpage)
     {
+        if (isset($_GET['p']))
+            $pageno = $_GET['p'];
+        else
+            $pageno = 1;
         $this->totpages = ceil($total/$perpage);
         if ($pageno > $this->totpages)
             $pageno = $this->totpages;

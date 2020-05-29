@@ -15,11 +15,7 @@ $total = $dbase->countPosts();
 if ($total == 0)
     echo '<div class="post">No Posts</div>';
 else {
-    if (isset($_GET['p']))
-        $pageno = $_GET['p'];
-    else
-        $pageno = 1;
-    $offset = $pagin->setup($total, $perpage, $pageno);
+    $offset = $pagin->setup($total, $perpage);
     $posts = $dbase->loadPosts($offset, $perpage);
     $view->viewPosts($posts, $dbase);
 
