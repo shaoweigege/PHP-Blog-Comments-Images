@@ -10,7 +10,8 @@ $dbase = require 'class/DBase.php';
 $view  = require 'class/View.php';
 
 if (isset($_POST['submit'])) {
-    extract($_POST);
+    $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+    extract($rpost);
     if ($submit == 'Edit') {
         $dbase->updateComment($comid, $comment);
         header('location:readpost.php?id='.$postid);

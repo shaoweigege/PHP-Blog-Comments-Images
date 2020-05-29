@@ -12,11 +12,13 @@ echo '<div class="post">';
 if (isset($_POST['submit'])) {
     $valid->csrf_check();
     if ($valid->captcha_check()) {
-        if ($_POST['upass'] == $_POST['upass2']) {
+        $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        extract($rpost);
+        if ($upass == $upass2) {
             $dbase = require 'class/DBase.php';
-            $uname = $dbase->getUname($_POST['uname']);
+            $uname = $dbase->getUname($uname);
             if (!$uname) {
-                $dbase->insertUser($_POST['uname'], $_POST['upass']);
+                $dbase->insertUser($uname, $upass);
                 echo 'Success!</div>';
                 require 'include/footer.php';
                 exit();

@@ -11,8 +11,10 @@ $valid = require 'class/Valid.php';
 
 if (isset($_POST['submit'])) {
     $valid->csrf_check();
+    $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+    extract($rpost);
     $dbase = require 'class/DBase.php';
-    $pid = $dbase->insertPost($_POST['title'], $_POST['body']);
+    $pid = $dbase->insertPost($title, $body);
     if (is_uploaded_file($_FILES['image']['tmp_name'])) {
         $dbase->imageUpload($pid);
     }

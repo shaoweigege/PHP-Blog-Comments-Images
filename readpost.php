@@ -9,8 +9,10 @@ require 'include/header.php';
 if (isset($_POST['submit'])) {
     $valid->csrf_check();
     if ($valid->captcha_check()) {
-        $dbase->insertComment($_POST['author'], $_POST['comment'], $_POST['postid']);
-        $id = $_POST['postid'];
+        $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        extract($rpost);
+        $dbase->insertComment($author, $comment, $postid);
+        $id = $postid;
     }
 }    
     
