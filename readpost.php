@@ -14,8 +14,8 @@ if (isset($_POST['submit'])) {
         $dbase->insertComment($author, $comment, $postid);
         $id = $postid;
     }
-}    
-    
+}
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
