@@ -6,7 +6,7 @@ $valid = require 'class/Valid.php';
 if (isset($_POST['submit'])) {
     $valid->csrf_check();
     $dbase = require 'class/DBase.php';
-    $dbase->doLogin($_POST['uname'], $_POST['upass']);
+    $dbase->doLogin();
     header('location:index.php');
     exit();
 }

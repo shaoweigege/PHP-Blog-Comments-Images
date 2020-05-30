@@ -172,8 +172,10 @@ class DBase extends PDO
         return $this->query($sql)->fetchAll();
     }
 
-    function doLogin($uname, $upass)
+    function doLogin()
     {
+        $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        extract($rpost);
         $sql = "SELECT * FROM users WHERE uname = '$uname'";
         $row = $this->query($sql)->fetch();
         if ($row && password_verify($upass, $row->upass)) {
