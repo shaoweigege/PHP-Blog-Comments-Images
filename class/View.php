@@ -173,7 +173,6 @@ class View
     {
 ?>
         <div class="post">
-        <br>
         Login
         <br><br>
         <form method="post">

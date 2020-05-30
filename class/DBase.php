@@ -181,6 +181,8 @@ class DBase extends PDO
         if ($row && password_verify($upass, $row->upass)) {
             $data = json_encode([$row->id, $row->uname, $row->ulevel]);
             setcookie('userdata2', $data, time() + 14*24*3600);
+            header('location:index.php');
+            exit();
         }
     }
     function doSignUp()
