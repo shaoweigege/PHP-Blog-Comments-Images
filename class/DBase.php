@@ -181,6 +181,24 @@ class DBase extends PDO
             setcookie('userdata2', $data, time() + 14*24*3600);
         }
     }
+    function doSignUp()
+    {
+        $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        extract($rpost);
+        if ($upass == $upass2) {
+            $name = $this->getUname($uname);
+            if (!$name) {
+                $this->insertUser($uname, $upass);
+                echo 'Success!</div>';
+                require 'include/footer.php';
+                exit();
+            } else {
+                echo 'Username already taken';
+            }
+        } else {
+            echo 'Passwords don\'t match';
+        }
+    }
 
     function imageUpload($pid)
     {
