@@ -17,5 +17,6 @@ if (isset($_POST['submit'])) {
     }
 }
 $view->signUpForm($valid);
+echo '</div>';
 
 require 'include/footer.php';

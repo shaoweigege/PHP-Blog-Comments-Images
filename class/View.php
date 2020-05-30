@@ -204,7 +204,6 @@ class View
         <input type="button" value="Cancel"
             onClick="window.location.href='index.php'">
         </form>
-        </div>
 <?php
     }
 
