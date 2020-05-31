@@ -12,16 +12,16 @@
         <fieldset>
         <br>
         <label>Name of your blog</label><br>
-        <input name="blog_title" value="PHP Blog">
+        <input name="blog_title" value="PHP Blog" required>
         <br><br>
         <label>Posts per page</label><br>
-        <input name="perpage" type="number" value="8">
+        <input name="perpage" type="number" value="8" required>
         <br><br>
         <label>Timezone</label><br>
-        <input name="timezone" value="America/New_York">
+        <input name="timezone" value="America/New_York" required>
         <br><br>
         <label>Setlocale for time</label><br>
-        <input name="locale" value="english">
+        <input name="locale" value="english" required>
         <br><br><br>
         <label>Select Database</label><br>
         <select name="driver">
