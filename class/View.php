@@ -84,8 +84,9 @@ class View
         <br><br>
         <form method="post" enctype="multipart/form-data">
             <?php $valid->csrf_create() ?>
-            <input name="title" placeholder="Title" size="50"><br>
-            <textarea name="body" placeholder="Body" cols="60" rows="10"></textarea><br>
+            <input name="title" placeholder="Title" size="50" required><br>
+            <textarea name="body" placeholder="Body" cols="60" rows="10" 
+                        required></textarea><br>
             Image Upload <input name="image" type="file"><br><br>
             <input type="submit" name="submit">
             <input type="button" value="Cancel"
@@ -179,8 +180,8 @@ class View
         <br><br>
         <form method="post">
         <?php $valid->csrf_create() ?>
-        <input name="uname" placeholder="Username"><br>
-        <input name="upass" type="password" placeholder="Password"><br>
+        <input name="uname" placeholder="Username" required><br>
+        <input name="upass" type="password" placeholder="Password" required><br>
         <input type="submit" name="submit">
         <input type="button" value="Cancel"
             onClick="window.location.href='index.php'">
@@ -197,9 +198,9 @@ class View
         <br><br>
         <form method="post">
         <?php $valid->csrf_create() ?>
-        <input name="uname" placeholder="User Name"><br>
-        <input name="upass" type="password" placeholder="User Password"><br>
-        <input name="upass2" type="password" placeholder="Password Again"><br>
+        <input name="uname" placeholder="User Name" required><br>
+        <input name="upass" type="password" placeholder="User Password" required><br>
+        <input name="upass2" type="password" placeholder="Password Again" required><br>
         <img src="include/captchaimg.php"><br>
         <?php $valid->captcha_input() ?><br>
         <input name="submit" type="submit">
