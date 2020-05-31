@@ -169,10 +169,12 @@ class View
         <?php
     }
 
-    function loginForm($valid)
+    function loginForm($valid, $error)
     {
 ?>
         <div class="post">
+        <?php echo $error ?>
+        <br>
         Login
         <br><br>
         <form method="post">

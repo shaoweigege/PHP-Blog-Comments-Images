@@ -2,7 +2,7 @@
 
 $view  = require 'class/View.php';
 $valid = require 'class/Valid.php';
-$error = '';
+$error = '&nbsp;';
 
 if (isset($_POST['submit'])) {
     $valid->csrf_check();
@@ -15,7 +15,6 @@ if (UNAME) {
     header('location:index.php');
     exit();
 }
-echo '&nbsp;&nbsp;'.$error;
-$view->loginForm($valid);
+$view->loginForm($valid, $error);
 
 require 'include/footer.php';
