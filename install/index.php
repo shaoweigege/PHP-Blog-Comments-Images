@@ -3,6 +3,7 @@
 chdir('../');
 
 if (is_file('data/db_config.php')) {
+    header('location:../index.php');
     exit();
 }
 
