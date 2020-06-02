@@ -13,7 +13,7 @@ $db->exec($sql);
 $sql = "CREATE TABLE IF NOT EXISTS comments (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     author  TEXT,
-    comment TEXT,
+    commentbody TEXT,
     postid  INTEGER,
     stamptime INTEGER
     )";

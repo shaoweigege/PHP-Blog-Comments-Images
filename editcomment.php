@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     extract($rpost);
     if ($submit == 'Edit') {
-        $dbase->updateComment($comid, $comment);
+        $dbase->updateComment($comid, $commentbody);
         header('location:readpost.php?id='.$postid);
         exit();
     }

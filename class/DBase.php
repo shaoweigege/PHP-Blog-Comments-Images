@@ -50,14 +50,14 @@ class DBase extends PDO
         $this->exec($sql);
     }
 
-    function insertComment($author, $comment, $postid)
+    function insertComment($author, $commentbody, $postid)
     {
         $time = time();
-        $sql = "INSERT INTO comments (author, comment, postid, stamptime)
+        $sql = "INSERT INTO comments (author, commentbody, postid, stamptime)
                 VALUES  (?, ?, $postid, $time)";
         $stmt = $this->prepare($sql);
         $stmt->bindParam(1, $author,  PDO::PARAM_STR);
-        $stmt->bindParam(2, $comment, PDO::PARAM_STR);
+        $stmt->bindParam(2, $commentbody, PDO::PARAM_STR);
         $stmt->execute();
     }
 
@@ -97,11 +97,11 @@ class DBase extends PDO
         return $this->query($sql)->fetch();
     }
 
-    function updateComment($id, $comment)
+    function updateComment($id, $commentbody)
     {
-        $sql = "UPDATE comments SET comment=? WHERE id=$id";
+        $sql = "UPDATE comments SET commentbody=? WHERE id=$id";
         $stmt = $this->prepare($sql);
-        $stmt->execute([$comment]);
+        $stmt->execute([$commentbody]);
     }
 
     function deleteComment($id)

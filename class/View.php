@@ -68,7 +68,7 @@ class View
                 echo ' <a href="editcomment.php?id='.$com->id.'">Edit</a>';
             echo '</span><br>';
             echo '<div class="texten">';
-            echo nl2br($com->comment, false);
+            echo nl2br($com->commentbody, false);
             echo '</div>';
             echo '</div>';
             echo '<div class="line"></div>'."\n";
@@ -103,7 +103,7 @@ class View
         <form method="post">
         <?php $valid->csrf_create() ?>
         <input name="author" placeholder="Your Name" size="30" required><br>
-        <textarea name="comment" placeholder="Your Comment" 
+        <textarea name="commentbody" placeholder="Your Comment" 
                     cols="50" rows="8" required></textarea><br>
         <img src="include/captchaimg.php"><br>
         <?php $valid->captcha_input() ?><br>
@@ -153,8 +153,8 @@ class View
             <input name="author" size="58" 
                 value="<?php echo $com->author ?>" readonly>
             <br>
-            <textarea name="comment" cols="60" rows="8"
-                    required><?php echo $com->comment ?></textarea>
+            <textarea name="commentbody" cols="60" rows="8"
+                    required><?php echo $com->commentbody ?></textarea>
             <br>
             <input name="comid" type="hidden" value="<?php echo $com->id ?>">
             <input name="postid" type="hidden" value="<?php echo $com->postid ?>">

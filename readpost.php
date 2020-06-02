@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     if ($valid->captcha_check()) {
         $rpost =  filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         extract($rpost);
-        $dbase->insertComment($author, $comment, $postid);
+        $dbase->insertComment($author, $commentbody, $postid);
         $id = $postid;
     }
 }
