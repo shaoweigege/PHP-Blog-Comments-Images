@@ -34,14 +34,11 @@ if (isset($_COOKIE['userdata2'])) {
     #container {
         width: 850px;
         margin: auto;
-        border-left:  2px solid black;
-        border-right: 2px solid black;
-        background: #eeeeee;
+        color: #ffffff;
+        background: #000000;
     }
     #navbar {
         padding: 8px 0px;
-        color: #ffffff;
-        background: #000000;
     }
     #navbar a {
         margin-left: 20px;
@@ -55,8 +52,14 @@ if (isset($_COOKIE['userdata2'])) {
         font-size: 20px;
         font-weight: bold;
     }
+    #content {
+        margin: 0 2px;
+        color: #000000;
+    }
     .post {
-        margin: 6px 12px;
+        background: #eeeeee;
+        padding: 6px 12px;
+        margin-top: 2px;
     }
     .title {
         margin: 5px 0px;
@@ -79,23 +82,10 @@ if (isset($_COOKIE['userdata2'])) {
     .clearboth {
         clear: both;
     }
-    .line {
-        margin-top: 4px;
-        height: 2px;
-        background: #000000;
-    }
-    .thickline {
-        margin-top: 4px;
-        height: 4px;
-        background: #000000;
-    }
     #footer {
-        padding-top: 0;
         text-align: center;
         font-size: 13px;
         font-style: italic;
-        color: #ffffff;
-        background: #000000;
     }
 </style>
 </head>

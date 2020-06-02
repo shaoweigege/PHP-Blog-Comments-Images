@@ -28,7 +28,7 @@ $comments = $dbase->loadComments($id);
 if ($comments)
     $view->viewComments($comments);
 else {
-    echo '<div class="post"><br>';
+    echo '<div class="post">';
     echo 'No comments</div>';
 }
 $view->commentsForm($id, $valid);

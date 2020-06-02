@@ -24,8 +24,7 @@ class View
             echo nl2br($postbody, false);
             echo  '</div>';
             echo '<a href="readpost.php?id='.$post->id.'">Comments('.$numCom.')</a>';
-            echo '</div>';
-            echo '<div class="thickline"></div>'."\n";
+            echo '</div>'."\n";
         }
     }
 
@@ -52,8 +51,7 @@ class View
         echo nl2br($post->postbody, false);
         echo '<div class="clearboth"></div>';
         echo '</div>';
-        echo '</div>';
-        echo '<div class="thickline"></div>'."\n";
+        echo '</div>'."\n";
     }
 
     function viewComments($comments)
@@ -70,8 +68,7 @@ class View
             echo '<div class="texten">';
             echo nl2br($com->commentbody, false);
             echo '</div>';
-            echo '</div>';
-            echo '<div class="line"></div>'."\n";
+            echo '</div>'."\n";
         }
     }
 
