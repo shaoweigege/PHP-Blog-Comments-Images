@@ -2,27 +2,27 @@
 
 $sql = "CREATE TABLE IF NOT EXISTS posts (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    userid INTEGER,
-    posttitle TEXT,
+    userid MEDIUMINT,
+    posttitle VARCHAR(100),
     postbody  TEXT,
     stamptime INTEGER,
-    image TEXT DEFAULT '',
-    numviews INTEGER DEFAULT 0
+    image VARCHAR(100) DEFAULT '',
+    numviews MEDIUMINT DEFAULT 0
     )";
 $db->exec($sql);
 $sql = "CREATE TABLE IF NOT EXISTS comments (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    author  TEXT,
+    author  VARCHAR(100),
     commentbody TEXT,
-    postid  INTEGER,
+    postid  MEDIUMINT,
     stamptime INTEGER
     )";
 $db->exec($sql);
 $sql = "CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    uname TEXT UNIQUE,
-    upass TEXT,
-    ulevel INTEGER DEFAULT 1,
-    uposts INTEGER DEFAULT 0
+    uname VARCHAR(100) UNIQUE,
+    upass VARCHAR(100),
+    ulevel TINYINT DEFAULT 1,
+    uposts MEDIUMINT DEFAULT 0
     )";
 $db->exec($sql);
